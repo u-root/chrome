@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+zcat chrome.gz > chrome/chrome
+chmod a+x chrome/chrome
+mksquashfs chrome /tmp/mfs -root-owned -noappend
+cat ~/bin/AppImageRuntime > /tmp/chrome
+cat /tmp/mfs >> /tmp/chrome
+chmod a+x /tmp/chrome
