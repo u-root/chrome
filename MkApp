@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+fuck
 zcat chrome.gz > chrome/chrome
 chmod a+x chrome/chrome
 mksquashfs chrome /tmp/mfs -root-owned -noappend

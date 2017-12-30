@@ -46,4 +46,5 @@ exec > >(exec cat)
 exec 2> >(exec cat >&2)
 
 # Note: exec -a below is a bashism.
-exec -a "$0" "$HERE/chrome" "$@"
+# note: until we no longer run as root we need --no-sandbox
+exec -a "$0" "$HERE/chrome" --no-sandbox "$@"
